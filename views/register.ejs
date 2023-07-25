@@ -1,0 +1,58 @@
+<html><head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./styles/style.css" type="text/css" />
+  <title>Sheare Your Secrect</title>
+</head>
+
+
+
+ <body class="bg-gray-400">
+  <div class="container mx-auto p-2">
+    <div class="max-w-sm bg-white mx-auto px-5 py-10 rounded shadow-xl">
+      <div class="text-center mb-8">
+        <h1 class="font-bold text-2xl">Register</h1>
+      </div>
+      <form action="/register" method="POST">
+        <!-- Input fields for name, rollno, dept, role, and password -->
+        <div class="mt-5">
+          <label>Name:</label>
+          <input type="text" name="name" id="name" class="block w-full p-2 border rounded border-gray-400">
+        </div>
+        <div class="mt-5">
+          <label>RollNo:</label>
+          <input type="text" name="rollno" id="rollno" class="block w-full p-2 border rounded border-gray-400">
+        </div>
+        <div class="mt-5">
+          <label>Dept:</label>
+          <input type="text" name="dept" id="dept" class="block w-full p-2 border rounded border-gray-400">
+        </div>
+        <div class="mt-5">
+          <label>Role:</label>
+          <div>
+            <input type="radio" id="teacher" name="role" value="teacher">
+     <label for="teacher">Teacher</label>
+     <input type="radio" id="student" name="role" value="student">
+     <label for="student">Student</label>        </div>
+        </div>
+        <div class="mt-5">
+          <label>Password:</label>
+          <input type="password" name="password" id="password" class="block w-full p-2 border rounded border-gray-400">
+        </div>
+        <!-- Add other input fields for rollno, dept, role, and password here... -->
+
+        <!-- Submit button and login link -->
+        <div class="mt-10 flex justify-center">
+          <input type="submit" value="Register" class="py-3 bg-slate-500 text-white w-1/2 hover:bg-slate-300 hover:cursor-pointer">
+        </div>
+      </form>
+
+      <!-- Login link -->
+      <div class="mt-5 bg-slate-500 w-1/4 text-center rounded">
+        <a href="/login" class="text-bold text-white"> Login :)</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

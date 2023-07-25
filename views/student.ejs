@@ -1,0 +1,18 @@
+<%-include("./partials/header")-%>
+<main class="w-full min-h-screen flex flex-col items-center justify-center">
+    <% if (student) { %>
+        <div class="border border-slate-500 p-4 rounded-md mt-4 text-justify bg-gray-800 text-white">
+            <p><b>Name:</b> <%= student.name %></p>
+            <p><b>Register No:</b> <%= student.rollno %></p>
+            <p><b>Department:</b> <%= student.dept %></p>
+            <p><b>Date of Birth:</b> <%= student.dob %></p>
+            <p><b>Email:</b> <%= student.email %></p>
+
+            
+        </div>
+    <% } else { %>
+        <h2 class="text-3xl font-semibold">
+            Student not found!
+        </h2>
+    <% } %>
+</main>

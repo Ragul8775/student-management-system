@@ -1,0 +1,52 @@
+<%-include("./partials/header")-%>
+<body class="bg-gray-100">
+  <!-- Header -->
+  <header class="bg-white shadow-md">
+    <!-- Your header content here... -->
+  </header>
+
+
+  <!-- Main content -->
+  <main class="container mx-auto mt-5 px-4 flex flex-col md:flex-row justify-center gap-16">
+    <div class="max-w-md mx-2 bg-white rounded shadow-md p-6 mb-5 md:mb-0 md:w-1/4">
+      <h2 class="text-2xl font-semibold mb-4">Welcome, <%= user.name %></h2>
+      <p>Roll No: <%= user.rollno %></p>
+      <p>Department: <%= user.dept %></p>
+      <p>Role: <%= user.role %></p>
+   
+    </div>
+    <div class="max-w-md bg-white px-5 py-10 rounded shadow-xl md:w-3/4">
+
+      <div class="text-center mb-8">
+        <h1 class="font-bold text-2xl">Create Student</h1>
+      </div>
+      <form action="/" method="POST">
+        <div class="mt-5">
+          <label>Name:</label>
+          <input type="text" name="name" id="name" class="block w-full p-2 border rounded border-gray-400">
+        </div>
+        <div class="mt-5">
+          <label>RollNo:</label>
+          <input type="text" name="rollno" id="rollno" class="block w-full p-2 border rounded border-gray-400">
+        </div>
+        <div class="mt-5">
+          <label>Dept:</label>
+          <input type="text" name="dept" id="dept" class="block w-full p-2 border rounded border-gray-400">
+        </div>
+        <div class="mt-5">
+          <label>Date of Birth:</label>
+          <input type="date" name="dob" id="dob" class="block w-full p-2 border rounded border-gray-400">
+        </div>
+        <div class="mt-5">
+          <label>Email:</label>
+          <input type="email" name="email" id="email" class="block w-full p-2 border rounded border-gray-400">
+        </div>
+
+        <div class="mt-10 flex justify-center">
+          <input type="submit" value="Create Student" class="py-3 bg-gray-800 text-white w-1/2 hover:bg-slate-300 hover:cursor-pointer">
+        </div>
+      </form>
+    </div>
+  </main>
+</body>
+</html>

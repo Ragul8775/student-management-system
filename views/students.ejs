@@ -1,0 +1,52 @@
+<%-include("./partials/header")-%>
+<main class="w-full min-h-screen flex flex-col justify-start">
+    <!-- Search Bar -->
+	<form action="/search" method="GET" class="flex flex-row justify-center items-center">
+		<input
+			type="text"
+			name="rollno"
+			placeholder="Enter Roll Number"
+			class="border-2 border-black p-2 mr-2 w-64 rounded-md focus:outline-none focus:ring focus:border-blue-300"
+		/>
+		<button
+			type="submit"
+			class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300"
+		>
+			Search
+		</button>
+		</form>
+		
+    
+
+    <% if (students.length > 0) { %>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-4">
+        <% students.forEach(student => { %>
+          <div class="border w-64 border-slate-500 p-4 rounded-md mt-4 text-justify transition-all hover:bg-slate-500 bg-gray-800 text-white hover:shadow-md hover:-translate-y-1">
+            <!-- Student information here -->
+            <p class="flex"><b class="mr-auto">Name:</b> <%= student.name %></p>
+            <p class="flex">
+              <b class="mr-auto">RollNo:</b> <%= student.rollno %>
+            </p>
+            <p class="flex">
+              <b class="mr-auto mb-2">Department:</b> <%= student.dept %>
+            </p>
+  
+            <% if (user.role === 'teacher') { %>
+              <div class="flex justify-around">
+                <!-- Show the update button only for teachers -->
+                <a href="/students/<%= student.rollno %>/update" class="bg-blue-700 h-7 text-white text-sm p-1">Update</a>
+                <form action="/students/<%= student.rollno %>/delete" method="post">
+                  <button type="submit" class="bg-red-700 text-white text-sm p-1">Delete</button>
+                </form>
+              </div>
+            <% } %>
+          </div>
+        <% }) %>
+      </div>
+    <% } else { %>
+      <h2 class="text-3xl font-semibold">
+        No Students added yet! Create one to get started
+      </h2>
+    <% } %>
+  </main>
+  
